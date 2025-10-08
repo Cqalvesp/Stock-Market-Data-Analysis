@@ -41,4 +41,5 @@ The data is loaded into a **MySQL** database, which includes the following table
 2. Docker for containerization
 3. AWS for database hosting and model deployment
 
+file:///Users/chrisap/Documents/GitHub/Financial-Data-Pipeline/ML_And_Plots.html
 

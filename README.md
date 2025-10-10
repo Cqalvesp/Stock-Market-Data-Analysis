@@ -34,12 +34,7 @@ The data is loaded into a **MySQL** database, which includes the following table
 2. **Transform**: The extracted data is cleaned and preprocessed using **pandas** and **numpy** to handle missing values, correct data types, and format the data.
 3. **Load**: The processed data is loaded into the **MySQL** database using `pymysql`, with separate tables for historical data, financials, and stock actions.
 4. **Analysis**: The transformed data is analyzed using **R** and documented using **R Markdown**. The analysis includes statistical insights, visualizations, and other relevant metrics.
-5. **View**: Download html file to see how the data is analyzed.
+5. **View**: Click the rpubs link to see how the data is analyzed.
 
-## **Next Steps**
-1. Build AI model to analyze historical data and company financials to predict stock price
-2. Docker for containerization
-3. AWS for database hosting and model deployment
-
-file:///Users/chrisap/Documents/GitHub/Financial-Data-Pipeline/ML_And_Plots.html
+https://rpubs.com/cqalvesp/stock-market-data-analysis
 

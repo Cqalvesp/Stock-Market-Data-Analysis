@@ -4,3 +4,5 @@ yfinance
 fastapi
 sqlalchemy
 pymysql
+matplotlib
+seaborn

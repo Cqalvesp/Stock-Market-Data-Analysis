@@ -1,4 +1,4 @@
-import SQLAlchemy
+import sqlalchemy
 import pymysql
 
 

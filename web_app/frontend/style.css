@@ -1,0 +1,62 @@
+        
+        
+body{
+    background-color: black;
+}
+
+h1{
+    color: white;
+    border-top-style: dotted;
+    border-width: 2px;
+    border: white;
+}
+
+h2{
+    color: white;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;      
+  justify-content: space-between; 
+}
+
+.header-container h1 {
+  margin: 0;                
+}
+
+.header-container img {
+  height: 60px;              
+  width: auto;
+}
+
+.header-container img {
+  height: 275px; 
+  width: auto;   
+}
+
+.header-container h1 {
+  position: relative;
+  top: -125px;  
+}
+
+
+img{
+    border-style:outset;
+    border-width: 5px;
+    border-color: lightgrey;
+    border-radius: 50px;
+    padding: 5px;
+
+    animation: SlidingLogos;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-timing-function: ease-out;
+    animation-duration: 5s;
+}
+
+@keyframes SlidingLogos{
+    from{margin-bottom: 100%;}
+    to{margin-top: 0%;}
+}

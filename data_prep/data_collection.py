@@ -8,9 +8,10 @@ import data_cleaning as cl
 from db_connection import get_connection
 
 # Define stock tickers to track and create ticker object for each
-Stock_List = ["AAPL", "MSFT", "NVDA", "AVGO", "ORCL", "CRM", "CSCO", "IBM", "ACN", "ADBE"]
+Stock_List = ["AAPL", "MSFT", "NVDA", "AVGO", "ORCL", "CRM", "CSCO", "ACN", "ADBE", "INTL", "NFLX", "TSLA", "AMZN", "GOOG", "UBER"]
 Company_Names = ["Apple Inc", "Microsoft Corp", "Nvidia Corp", "Broadcom Inc", "Oracle Corp", 
-                 "Salesforce Inc", "Cisco Systems Inc", "IBM Common Stock", "Accenture Plc", "Adobe Inc"]
+                 "Salesforce Inc", "Cisco Systems Inc", "Accenture Plc", "Adobe Inc",
+                 "Netflix", "Uber", "Tesla", "Intel", "Google", "Amazon"]
 Stock_Tickers = {x : yf.Ticker(x) for x in Stock_List}
 
 
@@ -128,38 +129,6 @@ def Financial_Insert(Ticker, Financials_df):
         conn.close()
     return None
 
-   
-
-# Run functions and print statements
-if __name__ == "__main__":
-    # Truncate all tables in database
-    Truncate()
-    print("Database tables have been truncated.")
-    
-    # Run cleaner module functions on fetched data and insert to database
-    for i in range(len(Stock_List)):
-        ticker = Stock_List[i]
-        name = Company_Names[i]
-
-        # Data transfer function to send company names and tickers to database
-        Name_Insert(ticker, name) 
-        print("Company names and tickers have been inserted to database.") 
-
-        # Fetch data, clean it, and send it to the database
-        hist = stock_history(ticker)
-        hist = cl.clean_hist(hist)
-        History_Insert(ticker, hist)
-        print("Company history has been inserted to database.") 
-    
-        act = stock_actions(ticker)
-        act = cl.clean_acts(act)
-        Actions_Insert(ticker, act)
-        print("Company actions have been inserted to database.") 
-
-        fin = stock_financials(ticker)
-        fin = cl.clean_fins(fin)
-        Financial_Insert(ticker, fin)
-        print("Company financials have been inserted to database.") 
 
     
         

@@ -7,6 +7,5 @@ app = FastAPI()
 # Home Page for web server
 @app.get("/")
 def home_page():
-    return "Welcome to the Book Recommender"
-
+    return "Welcome to My Stock Info Website!"
 

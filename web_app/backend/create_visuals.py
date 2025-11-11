@@ -1,9 +1,19 @@
+# Visualization Libraries
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+# Data Manipulation Libraries
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('file_path')
+# Database Connection Module
+from data_prep.db_connection import get_connection
+
+actions_query = "SELECT * FROM actions;"
+financials_query = "SELECT * FROM financials;"
+history_query = "SELECT * FROM history;"
+
+df = pd.read_sql('file_path')
 
 def create_line_chart():
     pass

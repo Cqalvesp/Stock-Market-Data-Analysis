@@ -13,7 +13,9 @@ actions_query = "SELECT * FROM actions;"
 financials_query = "SELECT * FROM financials;"
 history_query = "SELECT * FROM history;"
 
-df = pd.read_sql('file_path')
+actions = pd.read_sql('file_path')
+financials = pd.read_sql('file_path')
+history = pd.read_sql('file_path')
 
 def create_line_chart():
     pass

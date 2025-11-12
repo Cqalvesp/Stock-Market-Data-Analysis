@@ -1,0 +1,20 @@
+# Use an official lightweight Python image
+FROM python:3.12-7
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy requirements first (for caching)
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the app
+COPY . .
+
+# Expose port (FastAPI default is 8000)
+EXPOSE 8000
+
+# Command to run the FastAPI app
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
